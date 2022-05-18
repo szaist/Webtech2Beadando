@@ -17,7 +17,7 @@
                 </template>
                 <template v-else>
                     <li class="hover:bg-slate-100 px-4 py-3">
-                        <span class="cursor-pointer" @click="logout"
+                        <span class="cursor-pointer" @click="logOut"
                             >Logout</span
                         >
                     </li>
@@ -36,6 +36,10 @@ export default {
     },
     methods: {
         ...mapActions(["logout"]),
+        logOut() {
+            this.logout();
+            this.$router.push("/");
+        },
     },
 };
 </script>
